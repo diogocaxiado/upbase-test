@@ -1,20 +1,21 @@
-import { IButton } from '@/types/IButton';
+import { IButton } from '../types/IButton';
 import React from 'react';
-import { Text, TouchableOpacity, StyleSheet} from 'react-native';
+import CustomText from './Text';
+import { TouchableOpacity, StyleSheet} from 'react-native';
 
-export default function CustomButton({ title, onPress, style, textStyle, variant }: IButton) {
+export default function CustomButton({ title, onPress, style, textStyle, onOutline = false }: IButton) {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[
         styles.button,
-        variant ? styles.buttonSelected : styles.buttonUnselected,
+        onOutline ? styles.buttonSelected : styles.buttonUnselected,
         style,
       ]}
     >
-      <Text style={[styles.text, variant ? styles.textPrimary : styles.textSecondary, textStyle]}>
+      <CustomText style={[styles.text, onOutline ? styles.textPrimary : styles.textSecondary, textStyle]}>
         {title}
-      </Text>
+      </CustomText>
     </TouchableOpacity>
   );
 };

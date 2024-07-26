@@ -8,23 +8,25 @@ import 'react-native-reanimated';
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [fontLoaded] = useFonts({
-    Jura: require('../assets/fonts/Jura.ttf'),
+  const [fontsLoaded] = useFonts({
+    'Jura-Regular': require('../assets/fonts/Jura-Regular.ttf'),
+    'Jura-Bold': require('../assets/fonts/Jura-Bold.ttf'),
   });
 
   useEffect(() => {
-    if (fontLoaded) {
+    if (fontsLoaded) {
       SplashScreen.hideAsync();
     }
-  }, [fontLoaded]);
+  }, [fontsLoaded]);
 
-  if (!fontLoaded) {
+  if (!fontsLoaded) {
     return null;
   }
 
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="teste" options={{ headerShown: false }} />
       <Stack.Screen name="+not-found" />
     </Stack>
   );
