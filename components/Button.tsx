@@ -2,11 +2,12 @@ import { IButton } from '../types/IButton';
 import React from 'react';
 import CustomText from './Text';
 import { TouchableOpacity, StyleSheet} from 'react-native';
+import { router } from 'expo-router';
 
-export default function CustomButton({ title, onPress, style, textStyle, onOutline = true }: IButton) {
+export default function CustomButton({ title, onPress = '/', style, textStyle, onOutline = true }: IButton) {
   return (
     <TouchableOpacity
-      onPress={() => onPress}
+      onPress={() => router.push(onPress)}
       style={[
         styles.button,
         onOutline ? styles.buttonOutline : styles.buttonStandart,
