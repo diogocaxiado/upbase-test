@@ -1,28 +1,21 @@
-import { AntDesign, Ionicons } from '@expo/vector-icons';
-import { Link } from 'expo-router';
+import { AntDesign } from '@expo/vector-icons';
 import { Image, StyleSheet, View } from 'react-native';
 import Immobile from '../../assets/images/immobile.jpeg';
 
 import CustomButton from '../../components/Button';
 import CustomText from '../../components/Text';
+import TopBar from 'components/TopBar';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <View style={styles.top}>
-        <Ionicons name='arrow-back' size={32} color="#7B2CBF" />
-        
-        <Link href={'/schedule'} style={styles.link}>
-          <Ionicons name='add' size={24} color="#7B2CBF" />
-          <CustomText style={{color: '#7B2CBF'}}>Cadastrar imóvel</CustomText>
-        </Link>
-      </View>
+      <TopBar />
 
       <View>
         <CustomText style={{fontSize: 24, marginTop: 24, marginBottom: 24}}>Bem-vindo, Raphael!</CustomText>
 
         <View style={styles.buttons}>
-          <CustomButton title={'Todos os flats'} onOutline={true} />
+          <CustomButton title={'Todos os flats'} onOutline={false} />
           <CustomButton title={'Indisponíveis'} />
         </View>
       </View>
@@ -64,16 +57,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
     backgroundColor: '#ffffff',
-  },
-  top: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingTop: 24,
-  },
-  link: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   buttons: {
     display: 'flex',

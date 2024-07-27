@@ -3,13 +3,13 @@ import React from 'react';
 import CustomText from './Text';
 import { TouchableOpacity, StyleSheet} from 'react-native';
 
-export default function CustomButton({ title, onPress, style, textStyle, onOutline = false }: IButton) {
+export default function CustomButton({ title, onPress, style, textStyle, onOutline = true }: IButton) {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[
         styles.button,
-        onOutline ? styles.buttonSelected : styles.buttonUnselected,
+        onOutline ? styles.buttonOutline : styles.buttonStandart,
         style,
       ]}
     >
@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     borderRadius: 8,
   },
-  buttonSelected: {
+  buttonStandart: {
     backgroundColor: '#7B2CBF',
   },
-  buttonUnselected: {
+  buttonOutline: {
     backgroundColor: '#FFFFFF',
     borderWidth: 1,
     borderColor: '#00000029',
@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
     fontWeight: 400,
   },
   textPrimary: {
-    color: '#FFFFFF',
+    color: '#000000CC',
   },
   textSecondary: {
-    color: '#000000CC',
+    color: '#FFFFFF',
   },
 });
