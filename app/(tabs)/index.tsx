@@ -14,12 +14,12 @@ export default function HomeScreen() {
         
         <Link href={'/schedule'} style={styles.link}>
           <Ionicons name='add' size={24} color="#7B2CBF" />
-          <CustomText style={{fontWeight: '700', color: '#7B2CBF'}}>Cadastrar imóvel</CustomText>
+          <CustomText style={{color: '#7B2CBF'}}>Cadastrar imóvel</CustomText>
         </Link>
       </View>
 
       <View>
-        <CustomText style={{fontSize: 24, fontWeight: 700, marginTop: 24, marginBottom: 24}}>Bem-vindo, Raphael!</CustomText>
+        <CustomText style={{fontSize: 24, marginTop: 24, marginBottom: 24}}>Bem-vindo, Raphael!</CustomText>
 
         <View style={styles.buttons}>
           <CustomButton title={'Todos os flats'} onOutline={true} />
@@ -37,7 +37,7 @@ export default function HomeScreen() {
 
         <View style={styles.containerProduct}>
           <View style={styles.info}>
-            <CustomText style={{fontSize: 20, fontWeight: 700}}>Poundsflats Aquário</CustomText>
+            <CustomText style={{fontSize: 20, fontWeight: 'black'}}>Poundsflats Aquário</CustomText>
             <CustomText style={{fontSize: 12, fontWeight: 400}}>Santos, SP</CustomText>
           </View>
 
@@ -48,7 +48,7 @@ export default function HomeScreen() {
             </View>
 
             <View style={styles.price}>
-              <CustomText style={{fontWeight: 700}}>Diária:</CustomText>
+              <CustomText style={{fontWeight: 'black'}}>Diária:</CustomText>
               <CustomText>R$97</CustomText>
             </View>
           </View>
@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 4,
   },
   buttons: {
     display: 'flex',
