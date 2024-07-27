@@ -1,7 +1,7 @@
 export interface IButton {
   title: string;
   onOutline?: boolean;
-  onPress?: () => void;
+  onPress?: string;
   style?: any;
   textStyle?: any;
 }

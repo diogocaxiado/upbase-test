@@ -6,7 +6,7 @@ import { TouchableOpacity, StyleSheet} from 'react-native';
 export default function CustomButton({ title, onPress, style, textStyle, onOutline = true }: IButton) {
   return (
     <TouchableOpacity
-      onPress={onPress}
+      onPress={() => onPress}
       style={[
         styles.button,
         onOutline ? styles.buttonOutline : styles.buttonStandart,

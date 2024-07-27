@@ -1,11 +1,12 @@
-import { Link } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import CustomButton from 'components/Button';
+import CustomText from 'components/Text';
+import { StyleSheet, View } from 'react-native';
 
 export default function NotFoundScreen() {
   return (
     <View style={styles.container}>
-      <Text>Not Found</Text>
-      <Link href={'/'} style={styles.link}>Voltar</Link>
+      <CustomText>Not Found</CustomText>
+      <CustomButton onPress={'/'} onOutline={false} title='Voltar' />
     </View>
   );
 }
@@ -18,10 +19,4 @@ const styles = StyleSheet.create({
     padding: 20,
     gap: 8,
   },
-  link: {
-    backgroundColor: '#7B2CBF',
-    color: 'white',
-    padding: 8,
-    borderRadius: 8,
-  }
 });
